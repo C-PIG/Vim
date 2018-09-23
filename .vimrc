@@ -78,6 +78,7 @@ filetype plugin indent on
 autocmd vimenter * NERDTree
 let NERDTreeWinSize=15
 let NERDTreeMinimalUI=1
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "*******************************************************************************
 "python-mode配置
 "*******************************************************************************
