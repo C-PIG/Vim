@@ -7,7 +7,7 @@
 
 " This line should not be removed as it ensures that various options are
 " properly set to work with the Vim-related packages available in Debian.
-runtime! debian.vim
+"runtime! debian.vim
 
 " Vim will load $VIMRUNTIME/defaults.vim if the user does not have a vimrc.
 " This happens after /etc/vim/vimrc(.local) are loaded, so it will override
@@ -23,9 +23,9 @@ runtime! debian.vim
 
 " Vim5 and later versions support syntax highlighting. Uncommenting the next
 " line enables syntax highlighting by default.
-if has("syntax")
-  syntax on
-endif
+ if has("syntax")
+   syntax on
+ endif
 
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
@@ -54,8 +54,11 @@ endif
 "set hidden		" Hide buffers when they are abandoned
 "set mouse=a		" Enable mouse usage (all modes)
 set number
+set cursorcolumn
 set tabstop=4
-set showcmd
+set shiftwidth=4
+set expandtab
+set foldmethod=indent
 "*******************************************************************************
 "vim插件管理工具
 "*******************************************************************************
@@ -67,7 +70,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'python-mode/python-mode'
+Plugin 'dracula/Vim'
 
 
 call vundle#end()
@@ -75,18 +78,15 @@ filetype plugin indent on
 "*******************************************************************************
 "目录树的配置
 "*******************************************************************************
-autocmd vimenter * NERDTree
+autocmd vimenter * NERDTree 
 let NERDTreeWinSize=15
 let NERDTreeMinimalUI=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "*******************************************************************************
 "python-mode配置
 "*******************************************************************************
-let g:pymode = 1
-let g:pymode_options = 1
-let g:pymode_python='python3'
-let g:pymode_indent = 1
-let g:pymode_folding = 0
-let g:pymode_motion = 1
+"let g:pymode_python='python3'
 "*******************************************************************************
+"
 "*******************************************************************************
+colorscheme dracula
