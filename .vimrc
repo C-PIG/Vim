@@ -54,14 +54,12 @@
 "set hidden		" Hide buffers when they are abandoned
 "set mouse=a		" Enable mouse usage (all modes)
 set number
-set cursorcolumn
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set foldmethod=indent
 "*******************************************************************************
 "vim插件管理工具
-"*******************************************************************************
 set nocompatible
 filetype off
 
@@ -71,22 +69,36 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'dracula/Vim'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 
 call vundle#end()
 filetype plugin indent on
 "*******************************************************************************
-"目录树的配置
+
 "*******************************************************************************
+"目录树的配置
 autocmd vimenter * NERDTree 
 let NERDTreeWinSize=15
 let NERDTreeMinimalUI=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "*******************************************************************************
-"python-mode配置
+
 "*******************************************************************************
+"python-mode配置
 "let g:pymode_python='python3'
 "*******************************************************************************
-"
+
 "*******************************************************************************
+"主题
 colorscheme dracula
+"*******************************************************************************
+
+"*******************************************************************************
+"缩进对齐线
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=2
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size = 1
+"*******************************************************************************
