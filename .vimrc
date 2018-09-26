@@ -69,7 +69,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'dracula/Vim'
-Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Yggdroot/indentLine'
+
 
 
 call vundle#end()
@@ -86,7 +87,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 "*******************************************************************************
 "python-mode配置
-"let g:pymode_python='python3'
+let g:pymode_python='python3'
 "*******************************************************************************
 
 "*******************************************************************************
@@ -96,9 +97,6 @@ colorscheme dracula
 
 "*******************************************************************************
 "缩进对齐线
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=2
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_guide_size = 1
+let g:indentLine_char = '¦'
+let g:indentLine_color_term = 255
 "*******************************************************************************
