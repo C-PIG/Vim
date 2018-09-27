@@ -68,8 +68,9 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'dracula/Vim'
+Plugin 'tomasr/molokai'
 Plugin 'Yggdroot/indentLine'
+Plugin 'jiangmiao/auto-pairs'
 
 
 
@@ -92,7 +93,7 @@ let g:pymode_python='python3'
 
 "*******************************************************************************
 "主题
-colorscheme dracula
+colorscheme molokai
 "*******************************************************************************
 
 "*******************************************************************************
