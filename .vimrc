@@ -23,9 +23,9 @@
 
 " Vim5 and later versions support syntax highlighting. Uncommenting the next
 " line enables syntax highlighting by default.
- if has("syntax")
-   syntax on
- endif
+" if has("syntax")
+"   syntax on
+" endif
 
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
@@ -53,11 +53,14 @@
 "set autowrite		" Automatically save before commands like :next and :make
 "set hidden		" Hide buffers when they are abandoned
 "set mouse=a		" Enable mouse usage (all modes)
+syntax enable
+let g:solarized_termcolors=256
+set background=dark
+"*******************************************************************************
 set number
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set foldmethod=indent
 "*******************************************************************************
 "vim插件管理工具
 set nocompatible
@@ -68,9 +71,9 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'tomasr/molokai'
 Plugin 'Yggdroot/indentLine'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'altercation/vim-colors-solarized'
 
 
 
@@ -93,7 +96,7 @@ let g:pymode_python='python3'
 
 "*******************************************************************************
 "主题
-colorscheme molokai
+colorscheme solarized
 "*******************************************************************************
 
 "*******************************************************************************
